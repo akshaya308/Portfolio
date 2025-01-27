@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECE Student Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">ECE Portfolio</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Passionate Electronics and Communication Engineer with a focus on Embedded Systems, Signal Processing, and IoT.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <p>I'm <strong>Your Name</strong>, currently pursuing a degree in Electronics and Communication Engineering. With a deep interest in technology, I aim to bridge the gap between hardware and software to create solutions that are efficient, innovative, and impactful.</p>
+        </div>
+    </section>
+
+    <section id="timeline">
+        <div class="section-title">
+            <h2>My Educational Journey</h2>
+        </div>
+        <div class="timeline-container">
+            <div class="timeline-item" data-aos="fade-left">
+                <h3>School - ABC High School</h3>
+                <p><strong>Year:</strong> 2010 - 2015</p>
+                <p>Graduated with a focus on Science and Mathematics, which sparked my interest in engineering. I participated in various science fairs and extracurricular activities.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-right">
+                <h3>Junior College - XYZ Junior College</h3>
+                <p><strong>Year:</strong> 2015 - 2017</p>
+                <p>Completed my 12th-grade education with Physics, Chemistry, and Mathematics as my primary subjects. Gained foundational knowledge in electronics and communication.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <h3>Bachelor's Degree - ABC College of Engineering</h3>
+                <p><strong>Year:</strong> 2017 - Present</p>
+                <p>Currently pursuing my Bachelor's degree. Gaining hands-on experience with embedded systems, digital communication, and signal processing through various projects and internships.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-title">
+            <h2>Skills</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill">
+                <h3>Embedded Systems</h3>
+                <div class="progress-bar" style="width: 90%;">90%</div>
+            </div>
+            <div class="skill">
+                <h3>Signal Processing</h3>
+                <div class="progress-bar" style="width: 75%;">75%</div>
+            </div>
+            <div class="skill">
+                <h3>Communication Systems</h3>
+                <div class="progress-bar" style="width: 80%;">80%</div>
+            </div>
+            <div class="skill">
+                <h3>Programming</h3>
+                <div class="progress-bar" style="width: 85%;">85%</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-title">
+            <h2>Projects</h2>
+        </div>
+        <div class="projects-container">
+            <div class="project-card" onclick="openModal('smart-home')">
+                <h3>Smart Home Automation System</h3>
+                <p>Developed a home automation system using IoT with an Android app to control appliances remotely.</p>
+            </div>
+            <div class="project-card" onclick="openModal('rfid')">
+                <h3>RFID Based Attendance System</h3>
+                <p>Built a project using RFID technology to automate attendance logging with a database backend.</p>
+            </div>
+            <div class="project-card" onclick="openModal('fpga')">
+                <h3>Signal Processing on FPGA</h3>
+                <p>Implemented a signal filtering and noise reduction system using FPGA boards and Verilog programming.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact</h2>
+        </div>
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ECE Student Portfolio | Built with HTML & CSS</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Project Details -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="project-description"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (for animation effects)
+        AOS.init();
+
+        // Function to open project modal
+        function openModal(project) {
+            const descriptions = {
+                'smart-home': 'This project uses an IoT-based system to control home appliances through an Android app.',
+                'rfid': 'RFID technology automates attendance logging, linking each student with a unique ID.',
+                'fpga': 'A project where signal processing algorithms are implemented using FPGA boards and Verilog programming.'
+            };
+            document.getElementById('project-description').innerText = descriptions[project];
+            document.getElementById('project-modal').style.display = 'block';
+        }
+
+        // Function to close modal
+        function closeModal() {
+            document.getElementById('project-modal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
